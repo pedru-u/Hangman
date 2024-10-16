@@ -85,6 +85,10 @@ class HangmanApp:
         #return to menu button
         self.menubutton = customtkinter.CTkButton(master=self.master, text='Menu', font=('Bauhaus',50),anchor='se', command=self.menu)
         self.menubutton.pack(pady=60)
+        self.failed = 0
+        self.letterposition = -1
+        self.correctletters = []
+        self.lettersattempted = []
     def game_over_screen(self):
         for i in self.master.winfo_children():
             i.destroy()
