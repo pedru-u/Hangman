@@ -117,12 +117,6 @@ class HangmanApp:
         self.menubutton = customtkinter.CTkButton(master=self.master, text='Menu', font=('Bauhaus',50),anchor='se', command=self.menu)
         self.menubutton.pack()
     def menu(self):
-        self.word = ''
-        self.failed = 0 
-        self.lettersattempted = []
-        self.correctletters = []
-        self.letterposition = -1
-        self.xForWord = False
         for i in self.master.winfo_children():
             i.destroy()
         #start new widgets
@@ -146,7 +140,8 @@ class HangmanApp:
         self.ruleslabel = customtkinter.CTkLabel(master=self.master, text='Rules', font=('Algerian',50))
         self.ruleslabel.pack(pady=20)
         #Return to menu button
-        
+        self.menubutton = customtkinter.CTkButton(master=self.master, text='Menu', font=('Bauhaus',200), command=self.menu)
+        self.menubutton.pack(pady=20)
     def entryget(self):
         #Get the word for the function
         if len(self.wordentry.get()) > 12:
